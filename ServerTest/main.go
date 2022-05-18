@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./src/controllers"
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
+	"github.com/ithunter101/GoServer-Ulventech/ServerTest/src/controllers"
 )
 
 func main() {

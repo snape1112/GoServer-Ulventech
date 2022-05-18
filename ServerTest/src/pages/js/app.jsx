@@ -16,7 +16,7 @@ var App = React.createClass({
 
         axios({
             method: "post",
-            url: "http://localhost:3000/parse_book",
+            url: "http://localhost:8080/parse_book",
             data: bodyFormData,
             headers: { "Content-Type": "application/json" },
           })
@@ -38,9 +38,9 @@ var App = React.createClass({
 
     render: function() {
         return (<div className="container">
-            <div className="row" style={{ display: "flex"}}>
-                <div className="col-md-6">
-                    <textarea class="form-control" placeholder="Place your text here!" value={this.state.content} onChange={(e) => this.handleChange(e)} multiple rows="22" cols="70"/>
+            <div className="row" style={{ display: "flex" , marginTop:"20px"}}>
+                <div className="col-md-9">
+                    <textarea class="form-control" placeholder="Place your text here!" value={this.state.content} onChange={(e) => this.handleChange(e)} multiple rows="35" cols="120"/>
                 </div>
                 <div className="col-md-3">
                     <ul className="list-group">
@@ -57,11 +57,12 @@ var App = React.createClass({
                             </li>)
                         )}
                     </ul>
+                    <div style={{ "text-align": "center"}}>
+                        <button type="button" className="btn btn-primary" onClick={(e) => this.handleClick(e)}>Get Words</button>
+                    </div>
                 </div>
             </div>
-            <div style={{ "text-align": "center"}}>
-                <button type="button" className="btn btn-primary" onClick={(e) => this.handleClick(e)}>PARSE</button>
-            </div>
+            
         </div>);
     }
 });
